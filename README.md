@@ -11,7 +11,7 @@ If you still feel uncomfortable running this bat, you can read what it does and 
 # Preparing blender
 
 1. Download and install [blender 3.6](https://download.blender.org/release/Blender3.6/blender-3.6.0-windows-x64.zip). Other versions of blender will not work.
-2. Download and install [this fork of io_scene_cgf](https://github.com/234523413432634/io_scene_cgf) and Aion_blender_level_importer as blender addons.
+2. Download and install [this fork of io_scene_cgf](https://github.com/234523413432634/io_scene_cgf) and io_import_aion_level.py as blender addons.
 3. In the aion map importer preferences, set the path to AionResources, which we created in the previous steps.
 ![AionResources](imgs/2.jpg)
 
