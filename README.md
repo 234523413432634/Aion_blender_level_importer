@@ -15,39 +15,22 @@ If you still feel uncomfortable running this bat, you can read what it does and 
 3. In the aion map importer preferences, set the path to AionResources, which we created in the previous steps.
 ![AionResources](imgs/2.jpg)
 
-# importing a level & tips
+# importing a level
 
 Now that everything is set up, press "N" to open the side panel in blender, select the "Aion importer" tab in it.
 
-Here, you can import a full level (slow, only use for small levels or dungeons) or individual parts of the level.
+Here you can import a full level or individual parts of the level.
 
 After pressing the import button, select the path to the map folder in the "AionResources" folder. Example: "D:\AionResources\Levels\lf1". After selecting this folder, the import process will begin.
 
-The import time depends on your CPU and the map size. Importing dungeons should take a minute or two, while the large open maps could easily take 10 - 15 minutes.
+The import time depends on your CPU and the map size. Importing dungeons should take a minute or two, while the large open maps could easily take 3 - 10 minutes.
 
-If you want to import larger maps, open multiple blender instances and import individual parts of the level in each of them, then copy the imported objects into one blender instance.
-
-For example, I launch blender.exe 4 times:
-
-In the first blender instance - import heightmap
-
-2nd instance - import brushes
-
-3rd instance - import objects
-
-4th instance - import mission objects
-
-Once all imports are complete, I copy the objects from each instance into the first one.
-
-To improve viewport performance, I also join all vegetation into one mesh (A, Ctrl+J in the second blender instance) and then import that one mesh into the main blender instance. It's an optional step.
-
-You CAN use the import full level button for large maps, but that would take 2 - 5 times longer to import compared to the approach I've mentioned above.
+A fully imported map might run at a very low fps, as your usual open world map could easily have 16k - 40k objects. You can partially alleviate this by joining all individual objects (like entire vegetation collection) into a singular mesh by selecting all needed objects and pressing CTRL+J.
 
 # Limitations & bugs
 
 1. Blender 3.6 only. This is an io_scene_cgf limitation. If the author of the addon decides to update it, then the map importer could easily be brought to newer versions as well. Though nothing stops you from importing a level into blender 3.6, saving the scene, and then opening that scene in newer versions.
 2. Some (VERY few) objects are imported in a visually broken state. Once again, likely a io_scene_cgf issue. CGF format is very complex, so it is understandable that there will be a few wonky meshes.
-3. The terrain material blending and tiling are a bit different from what they are in game. It's not that noticeable and might be fixed in the future (or not).
 
 # Credits
 [keyhom](https://github.com/keyhom) for [io_scene_cgf](https://github.com/keyhom/io_scene_cgf) - the plugin that imports cgf models into the blender. I've modified it slightly so it imports models even if creation of their materials fails.
@@ -57,3 +40,5 @@ You CAN use the import full level button for large maps, but that would take 2 -
 Deepseek-V3 for coding almost everything 😅
 
 Claude for making the initial implementation of the material blending for the terrain. GLM-4.5 and Qwen3-Coder-480B-A35B for fixing it and making it work properly and look good.
+
+Kimi K2.5 Thinking for Update 1 features and fixes
